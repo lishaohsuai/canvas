@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+	window.onload = function(){
+		var canvas = document.getElementById("canvas");
+
+		canvas.width = 1024;
+		canvas.height = 768;
+
+		var context  =canvas.getContext("2d");
+
+		context.lineWdith = 5;
+		context.strokeStyle = "#005588";
+		context.arc(300,300,200,
+			0,1.5*Math.PI);
+		context.fillStyle = "red";
+		context.fill();
+		context.stroke();
+	}
+</script>
+</body>
+</html>

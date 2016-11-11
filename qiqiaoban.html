@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>七巧板的绘制</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+<script>
+// 七巧板的各个颜色色块
+	var trm=[
+	{p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#CCFF33"},
+	{p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#33CCFF"},
+	{p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:"#FF0000"},
+	{p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:"#FFFF00"},
+	{p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:"#9900FF"},
+	{p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#FF77FF"},
+	{p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#FFBB66"}
+	];
+	window.onload = function(){
+		var canvas = document.getElementById('canvas');
+		canvas.height = 900;
+		canvas.width = 1024;
+		var context = canvas.getContext("2d");
+
+		for(var i=0;i<trm.length;i++){
+			draw(trm[i],context);
+		}
+	}
+	function draw(demo,ctx){
+		ctx.beginPath();
+		ctx.moveTo(demo.p[0].x,demo.p[0].y);
+		for(var j=1;j<demo.p.length;j++){
+			ctx.lineTo(demo.p[j].x,demo.p[j].y);
+		}
+		ctx.fillStyle = demo.color;
+		ctx.fill();
+	}
+</script>
+</body>
+</html>

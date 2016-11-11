@@ -1,0 +1,15 @@
+canvas 
+不建议css 定义大小 
+.getContext('2d')  2d 绘图
+canvas 是基于状态的的绘图
+context.arc(
+	centerx,centery,radius, // 圆心坐标和半径的值
+	startingAngle,endingAngle,  //角度开始与结束
+	anticlockwise = false // 顺时针
+)  
+绘制弧线  
+
+context.closePath();   自动闭合未闭合的弧线 
+  对fill  是没有用的
+
+  clearRect(0,0,WINDOW_WIDTH<WINDOW_HEIGHT);  刷新
